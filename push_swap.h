@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/04 10:23:14 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/06 11:50:24 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_piece
 // 	int				listsize;
 // 	struct s_piece	start;
 // }						t_data;
-
 
 int			digit_check(char *c);
 int			check_and_assemble(char **strings, t_piece **a, t_piece *new);

@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/03/27 19:11:25 by dreijans      ########   odam.nl          #
+#    Updated: 2023/04/06 16:04:42 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ push.c \
 swap.c \
 make_list.c \
 utils.c \
-radix.c \
+sort.c \
 main.c 
 OBJ_FILES = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 LIB = $(LIBDIR)/libft.a
 LIBDIR = Libft
 
@@ -37,7 +37,7 @@ $(LIB):
 	
 $(NAME): $(OBJ_FILES) $(LIB)
 		cp $(LIB) $(NAME)
-		$(CC) -o $(NAME) $(LIB) $(OBJ_FILES) 
+		$(CC) -o $(NAME) $(LIB) $(OBJ_FILES) -fsanitize=address -g
 
 %.o: %.c
 		@$(CC) -c $(CFLAGS) -o $@ $^

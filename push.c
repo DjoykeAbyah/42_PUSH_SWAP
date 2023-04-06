@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/07 20:42:13 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/22 15:59:25 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/04 15:07:16 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	pb(t_piece **top_a, t_piece **top_b)
 		(*top_b)->previous = temp_a;
 	else
 		temp_a->previous = NULL;
+	// (*top_a)->previous = NULL;//new element
 	*top_b = temp_a;
 	ft_printf("pb\n");
 }
@@ -44,6 +45,7 @@ void	pa(t_piece **top_b, t_piece **top_a)
 		(*top_a)->previous = temp_b;
 	else
 		temp_b->previous = NULL;
+	// (*top_b)->previous = NULL;//new element
 	*top_a = temp_b;
 	ft_printf("pa\n");
 }
