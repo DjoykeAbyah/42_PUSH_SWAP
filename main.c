@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/07 20:27:39 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/07 21:08:53 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 	push_back(&b, &a);
 	// big_sort(&a, &b);
 	print_lists(a);
-	printf("------");
+	printf("------\n");
 	print_lists(b);
 	return (0);
 }

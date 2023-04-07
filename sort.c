@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/07 20:51:01 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/07 21:22:33 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,15 @@ void	little_sort(t_piece **lst_a, t_piece **lst_b)
 void	push_back(t_piece **lst_b, t_piece **lst_a)
 {
 	print_lists(*lst_b);
+	printf("------\n");
+	print_lists(*lst_a);
 	while (*lst_b)
 	{
 		pa(lst_b, lst_a);
 		*lst_b = (*lst_b)->next;
 	}
 }
+
 //const will not change my my list, just iterate through it
 //max wil take over the index which is the smallest.
 // line 46: has to be one because it needs to compare to max first, so no longer 0 but 1 if true, so you can push top.
