@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/04 16:56:00 by dreijans      #+#    #+#                  #
-#    Updated: 2023/03/28 15:06:07 by dreijans      ########   odam.nl          #
+#    Updated: 2023/04/07 19:18:19 by djoyke        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@
 # OBJ_FILES = $(SRC:.c=.o)
 # CFLAGS = -Wall -Wextra -Werror
 # LIB = $(PRINTDIR)/printf.a
-# PRINTDIR = ft_printf
+# PRINTDIR = printf
 
 # .PHONY: all clear fclean re
 

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/23 13:02:46 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/07 19:18:38 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	print_lists(t_piece *list)
 {
 	while (list)
 	{
-		ft_printf("value[%d], index[%i]\n", list->value, list->index);
+		printf("value[%d], index[%i]\n", list->value, list->index);
 		list = list->next;
 	}
 }

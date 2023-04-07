@@ -6,76 +6,57 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/06 17:47:03 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/07 20:51:01 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap_index(t_piece **lst_a, t_piece **lst_b, int i, int index)
-{
-	if (i == 0)
-		pb(lst_a, lst_b);
-	if (i == 1)
-	{
-		sa(lst_a);
-		pb(lst_a, lst_b);
-	}
-	if (i == 2)
-	{
-		ra(lst_a);
-		ra(lst_a);
-		pb(lst_a, lst_b);
-	}
-	if (i == 3)
-	{
-		rra(lst_a);
-		rra(lst_a);
-		pb(lst_a, lst_b);
-	}
-	if (i == 4 && index == 0)
-	{
-		rra(lst_a);
-		pb(lst_a, lst_b);
-	}
-}
+int find_min(t_piece const *lst_a);
 
-static void	push_smallest(t_piece **lst_a, t_piece **lst_b)
-{
-	int		i;
-	t_piece	*temp;
-
-	i = 0;
-	temp = *lst_a;
-	while (temp && i < list_length(*lst_a))
-	{
-		if (temp->index == 0)
-		{
-			swap_index(lst_a, lst_b, i, 0);
-		}
-		temp = temp->next;
-		i++;
-	}
-	i = 0;
-	temp = *lst_a;
-	while (temp && i < list_length(*lst_a))
-	{
-		if (temp->index == 1)
-		{
-			swap_index(lst_a, lst_b, i, 1);
-		}
-		temp = temp->next;
-		i++;
-	}
-}
-
+//keep doing until listlen - 3
 void	little_sort(t_piece **lst_a, t_piece **lst_b)
 {
-	push_smallest(lst_a, lst_b);
-	if (!sort_check(*lst_a))
+	if (list_length(*lst_a) == 3)
+		return;
+	if (find_min(*lst_a))
+		pb (lst_a, lst_b);
+	else
 		rra(lst_a);
-	pa(lst_b, lst_a);
-	pa(lst_b, lst_a);
+	little_sort(lst_a, lst_b);
+}
+
+void	push_back(t_piece **lst_b, t_piece **lst_a)
+{
+	print_lists(*lst_b);
+	while (*lst_b)
+	{
+		pa(lst_b, lst_a);
+		*lst_b = (*lst_b)->next;
+	}
+}
+//const will not change my my list, just iterate through it
+//max wil take over the index which is the smallest.
+// line 46: has to be one because it needs to compare to max first, so no longer 0 but 1 if true, so you can push top.
+int find_min(t_piece const *lst_a)
+{	
+	int	i;
+	int max;
+	
+	i = 0;
+	max = 1000;
+	while (lst_a)
+	{
+		if (max > lst_a->index)
+		{
+			max = lst_a->index;
+			i++;
+		}
+		lst_a = lst_a->next;
+	}
+	if (i == 1)
+		return(1);
+	return(0);
 }
 
 void	three_sort(t_piece **lst_a)

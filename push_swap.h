@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/06 11:50:24 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/07 20:21:54 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void		big_sort(t_piece **lst_a, t_piece **lst_b);
 void		three_sort(t_piece **lst_a);
 // void		two_sort(t_piece **lst_a);
 void		little_sort(t_piece **lst_a, t_piece **lst_b);
+void		push_back(t_piece **lst_b, t_piece **lst_a);
 
 #endif

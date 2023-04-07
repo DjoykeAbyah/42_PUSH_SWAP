@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 12:08:54 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/04 10:59:58 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/07 19:16:36 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_str(char *s)
 {
-	if (s == (void *)0)
+	if (s == NULL)
 	{
 		return (write (1, "(null)", 6));
 	}

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/20 14:50:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/06 18:02:03 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/07 19:13:58 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	terminate(int error)
 {
 	if (error)
 	{
-		ft_printf("Error\n");
+		printf("Error\n");
 		exit (EXIT_FAILURE);
 	}
 	else
