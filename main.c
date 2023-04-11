@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/11 19:18:52 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/11 19:23:33 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,37 +28,15 @@ int	main(int argc, char **argv)
 		if (!strings)
 			terminate(1);
 		check_and_assemble(strings, &a, new);
-		// if (list_length(a) == 2)
-		// 	rra(&a);
-		// if (list_length(a) == 3)
-		// 	three_sort(&a);
-		// if (list_length(a) >= 4)
-		// 	little_sort(&a, &b);
-		// if (list_length(a) >= 100)
-		// 	big_sort(&a, &b);
-		// ft_free_strings_array(strings);
+		ft_free_strings_array(strings);
 	}
 	else if (argc > 2)
 	{
 		check_and_assemble(argv + 1, &a, new);
-		// if (argc == 3)
-		// 	rra(&a);
-		// if (argc == 4)
-		// 	three_sort(&a);
-		// if (argc >= 5)
-		// 	little_sort(&a, &b);
-		// else if (argc >= 100)
-		// 	big_sort(&a, &b);
 	}
-	if (list_length(a) == 2)
-		rra(&a);
-	if (list_length(a) == 3)
-		three_sort(&a);
-		//this isnt working
-	if (list_length(a) == 5)
-		little_sort(&a, &b);
-		push_back(&a, &b);
-	// push_back(&b, &a);
+	print_lists(a);
+	little_sort(&a, &b);
+	push_back(&b, &a);
 	// big_sort(&a, &b);
 	// print_lists(a);
 	// printf("------\n");
