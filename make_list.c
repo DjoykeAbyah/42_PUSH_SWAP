@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/07 20:49:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/31 10:46:35 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/11 16:08:51 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	list_length(t_piece *list)
 	int	i;
 
 	i = 0;
+	printf("inside the actual function listlen check\n");
 	while (list)
 	{
 		list = list->next;

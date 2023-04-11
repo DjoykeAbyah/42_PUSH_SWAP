@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/07 20:40:26 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/07 19:45:45 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/11 16:04:38 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ void	rra(t_piece **a)
 	tail = lstlast(*a);
 	temp = tail->previous;
 	lstadd_front(a, tail);
-	tail->previous = NULL;
+	(*a)->previous = NULL;
 	temp->next = NULL;
-	// *a = temp;
+	printf("-----------\n");
 	printf("rra\n");
+	printf("-----------\n");
+	print_lists(*a);
+	printf("finish 1 rra\n");
 }
 
 void	rrb(t_piece **b)
@@ -40,7 +43,7 @@ void	rrb(t_piece **b)
 	lstadd_front(b, tail);
 	tail->previous = NULL;
 	temp->next = NULL;
-	// *b = temp;
+	//*b = temp;
 	printf("rrb\n");
 }
 

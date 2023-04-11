@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/04/06 16:04:42 by dreijans      ########   odam.nl          #
+#    Updated: 2023/04/11 16:20:25 by djoyke        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ utils.c \
 sort.c \
 main.c 
 OBJ_FILES = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror -g
 LIB = $(LIBDIR)/libft.a
 LIBDIR = Libft
 

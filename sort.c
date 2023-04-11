@@ -6,12 +6,15 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/11 14:34:40 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/11 16:09:00 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//const will not change my my list, just iterate through it
+//max wil take over the index which is the smallest.
+// line 46: has to be one because it needs to compare to max first, so no longer 0 but 1 if true, so you can push top.
 int find_min(t_piece const *lst_a)
 {	
 	int	i;
@@ -36,10 +39,17 @@ int find_min(t_piece const *lst_a)
 //keep doing until listlen - 3
 void	little_sort(t_piece **lst_a, t_piece **lst_b)
 {
+	printf("before if statement\n");
 	if (list_length(*lst_a) == 3)
+	{
+		printf("inside listlen check\n");
 		return;
+	}
 	if (find_min(*lst_a))
+	{
+		printf("hi\n?");
 		pb (lst_a, lst_b);
+	}
 	else
 		rra(lst_a);
 	little_sort(lst_a, lst_b);
@@ -47,19 +57,9 @@ void	little_sort(t_piece **lst_a, t_piece **lst_b)
 
 void	push_back(t_piece **lst_b, t_piece **lst_a)
 {
-	print_lists(*lst_b);
-	printf("------\n");
-	print_lists(*lst_a);
-	while ((*lst_b != NULL)
-	{
+	while (*lst_b != NULL)
 		pa(lst_b, lst_a);
-		// *lst_b = (*lst_b)->next;
-	}
 }
-
-//const will not change my my list, just iterate through it
-//max wil take over the index which is the smallest.
-// line 46: has to be one because it needs to compare to max first, so no longer 0 but 1 if true, so you can push top.
 
 void	three_sort(t_piece **lst_a)
 {
