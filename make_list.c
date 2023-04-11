@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/07 20:49:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/11 16:08:51 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/11 17:59:30 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	lstadd_back(t_piece **list, t_piece *new)
 void	lstadd_front(t_piece **lst, t_piece *new)
 {
 	new->next = *lst;
+	(*lst)->previous = new;
 	*lst = new;
 }
 
@@ -60,7 +61,6 @@ int	list_length(t_piece *list)
 	int	i;
 
 	i = 0;
-	printf("inside the actual function listlen check\n");
 	while (list)
 	{
 		list = list->next;

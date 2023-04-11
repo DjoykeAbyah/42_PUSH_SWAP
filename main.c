@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/07 21:08:53 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/11 19:18:52 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	main(int argc, char **argv)
 		// 	rra(&a);
 		// if (list_length(a) == 3)
 		// 	three_sort(&a);
-		// if (list_length(a) == 4 || list_length(a) == 5)
+		// if (list_length(a) >= 4)
 		// 	little_sort(&a, &b);
-		// if (list_length(a) > 6)
+		// if (list_length(a) >= 100)
 		// 	big_sort(&a, &b);
-		ft_free_strings_array(strings);
+		// ft_free_strings_array(strings);
 	}
 	else if (argc > 2)
 	{
@@ -45,18 +45,24 @@ int	main(int argc, char **argv)
 		// 	rra(&a);
 		// if (argc == 4)
 		// 	three_sort(&a);
-		// if (argc == 5 || argc == 6)
+		// if (argc >= 5)
 		// 	little_sort(&a, &b);
-		// else if (argc > 6)
+		// else if (argc >= 100)
 		// 	big_sort(&a, &b);
 	}
-	// three_sort(&a);
-	print_lists(a);
-	little_sort(&a, &b);
-	push_back(&b, &a);
+	if (list_length(a) == 2)
+		rra(&a);
+	if (list_length(a) == 3)
+		three_sort(&a);
+		//this isnt working
+	if (list_length(a) == 5)
+		little_sort(&a, &b);
+		push_back(&a, &b);
+	// push_back(&b, &a);
 	// big_sort(&a, &b);
+	// print_lists(a);
+	// printf("------\n");
 	print_lists(a);
-	printf("------\n");
 	print_lists(b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/11 16:09:00 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/11 19:17:32 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 //const will not change my my list, just iterate through it
 //max wil take over the index which is the smallest.
-// line 46: has to be one because it needs to compare to max first, so no longer 0 but 1 if true, so you can push top.
-int find_min(t_piece const *lst_a)
+// line 46: has to be one because it needs to compare to max first, 
+//so no longer 0 but 1 if true, so you can push top.
+int	find_min(t_piece const *lst_a)
 {	
 	int	i;
-	int max;
-	
+	int	max;
+
 	i = 0;
 	max = 1000;
 	while (lst_a)
@@ -32,24 +33,17 @@ int find_min(t_piece const *lst_a)
 		lst_a = lst_a->next;
 	}
 	if (i == 1)
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }
 
 //keep doing until listlen - 3
 void	little_sort(t_piece **lst_a, t_piece **lst_b)
 {
-	printf("before if statement\n");
 	if (list_length(*lst_a) == 3)
-	{
-		printf("inside listlen check\n");
-		return;
-	}
+		return ;
 	if (find_min(*lst_a))
-	{
-		printf("hi\n?");
 		pb (lst_a, lst_b);
-	}
 	else
 		rra(lst_a);
 	little_sort(lst_a, lst_b);
@@ -60,6 +54,14 @@ void	push_back(t_piece **lst_b, t_piece **lst_a)
 	while (*lst_b != NULL)
 		pa(lst_b, lst_a);
 }
+
+//function that combines sorting, push back and find mallest
+// void	little_sort(t_piece **lst_a, t_piece **lst_b)
+// {
+// 	sorting(lst_a, lst_b);
+// 	push_back(lst_a, lst_b);
+// }
+
 
 void	three_sort(t_piece **lst_a)
 {
