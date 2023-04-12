@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 17:24:01 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 18:06:06 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,6 @@ int	find_min(t_piece const *lst_a)
 	if (i == 1)
 		return (1);
 	return (0);
-}
-
-void	little_sort(t_piece **lst_a, t_piece **lst_b)
-{
-	if (list_length(*lst_a) == 3 && !sort_check(*lst_a))
-	{
-		three_sort(lst_a);
-		return ;
-	}
-	if (find_min(*lst_a))
-		pb (lst_a, lst_b);
-	else
-		rra(lst_a);
-	if (sort_check(*lst_a))
-		return ;
-	little_sort(lst_a, lst_b);
 }
 
 void	three_sort(t_piece **lst_a)
@@ -75,6 +59,22 @@ void	three_sort(t_piece **lst_a)
 			sa(lst_a);
 		}
 	}
+}
+
+void	little_sort(t_piece **lst_a, t_piece **lst_b)
+{
+	if (list_length(*lst_a) == 3 && !sort_check(*lst_a))
+	{
+		three_sort(lst_a);
+		return ;
+	}
+	if (find_min(*lst_a))
+		pb (lst_a, lst_b);
+	else
+		rra(lst_a);
+	if (sort_check(*lst_a))
+		return ;
+	little_sort(lst_a, lst_b);
 }
 
 void	big_sort(t_piece **lst_a, t_piece **lst_b)

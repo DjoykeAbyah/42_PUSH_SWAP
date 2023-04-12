@@ -6,11 +6,31 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 17:28:37 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 17:54:39 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	digit_check(char *c)
+{
+	int	i;
+
+	i = 0;
+	if (c[i] == '-')
+		i++;
+	if (!ft_isalnum(c[i]))
+		terminate(1);
+	while (c[i] != '\0')
+	{
+		if (!(c[i] >= '0' && c[i] <= '9'))
+			return (0);
+		i++;
+	}
+	if (ft_atoi(c) > 2147483647 || ft_atoi(c) < -2147483648)
+		terminate(1);
+	return (1);
+}
 
 void	check_duplicates(t_piece *start, t_piece *temp)
 {

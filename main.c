@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 17:31:08 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 17:38:06 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ int	main(int argc, char **argv)
 
 /* TO DO */
 /*
-1. solution to list_lenght(list) in check_and assemble line:47
-2. utils line:28 first converse to long int before checking
-3. BONUS incl GNL
-4. malloc fail in 
-5. niks doen als list null is bij de moves?
-6. static voor de helper functies
+1. utils line:28 first converse to long int before checking
+2. BONUS incl GNL
+3. malloc fail in 
+4. niks doen als list null is bij de moves?
+5. static voor de helper functies
 */

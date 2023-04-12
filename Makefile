@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/04/11 16:20:25 by djoyke        ########   odam.nl          #
+#    Updated: 2023/04/12 18:05:31 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,14 @@ NAME = push_swap
 CC = cc
 SRC = \
 check_and_assemble.c \
-rotate.c \
-reverse_rotate.c \
-push.c \
-swap.c \
+main.c \
 make_list.c \
-utils.c \
+push.c \
+reverse_rotate.c \
+rotate.c \
 sort.c \
-main.c 
+swap.c \
+utils.c 
 OBJ_FILES = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror -g
 LIB = $(LIBDIR)/libft.a
