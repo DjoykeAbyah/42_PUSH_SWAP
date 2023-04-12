@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 19:44:53 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 19:51:41 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ int	main(int argc, char **argv)
 2. do something about rra, 
 sometimes check what the best thing is to do. 
 function does 13 or 12
+is it fixed with ra instead of rra?
 */

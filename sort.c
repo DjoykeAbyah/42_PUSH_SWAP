@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 19:42:08 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 19:50:08 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	little_sort(t_piece **lst_a, t_piece **lst_b)
 	if (find_min(*lst_a))
 		pb (lst_a, lst_b);
 	else
-		rra(lst_a);
+		ra(lst_a);
 	if (sort_check(*lst_a))
 		return ;
 	little_sort(lst_a, lst_b);
