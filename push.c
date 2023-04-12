@@ -6,13 +6,12 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/07 20:42:13 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/11 14:47:48 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/12 17:24:43 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//push from top of a to top of b
 void	pb(t_piece **top_a, t_piece **top_b)
 {
 	t_piece	*temp_a;
@@ -26,12 +25,10 @@ void	pb(t_piece **top_a, t_piece **top_b)
 		(*top_b)->previous = temp_a;
 	else
 		temp_a->previous = NULL;
-	//(*top_a)->previous = NULL;//new element
 	*top_b = temp_a;
-	printf("pb\n");
+	ft_putstr_fd("pb\n", 1);
 }
 
-//push from top of b to top of a
 void	pa(t_piece **top_b, t_piece **top_a)
 {
 	t_piece	*temp_b;
@@ -45,11 +42,6 @@ void	pa(t_piece **top_b, t_piece **top_a)
 		(*top_a)->previous = temp_b;
 	else
 		temp_b->previous = NULL;
-	//(*top_b)->previous = NULL;//new element
 	*top_a = temp_b;
-	printf("pa\n");
+	ft_putstr_fd("pa\n", 1);
 }
-
-//line:25 first time it can be NULL so need this! second pb is different order
-//line:26 NULL->prev is impossible
-//line:29 top_b to new top temp_a

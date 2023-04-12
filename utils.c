@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/20 14:50:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/07 19:13:58 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/12 16:39:19 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	digit_check(char *c)
 	i = 0;
 	if (c[i] == '-')
 		i++;
-	// if (!ft_isalnum(c[i]))
-	// 	terminate(1);
+	if (!ft_isalnum(c[i]))
+		terminate(1);
 	while (c[i] != '\0')
 	{
 		if (!(c[i] >= '0' && c[i] <= '9'))

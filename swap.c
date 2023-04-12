@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/24 17:17:10 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/07 19:13:58 by djoyke        ########   odam.nl         */
+/*   Updated: 2023/04/12 16:53:43 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	sa(t_piece **a)
 	two->previous = NULL;
 	three->previous = one;
 	*a = two;
-	printf("sa\n");
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	sb(t_piece **b)
@@ -49,21 +49,12 @@ void	sb(t_piece **b)
 	two->previous = NULL;
 	three->previous = one;
 	*b = two;
-	printf("sb\n");
+	ft_putstr_fd("sb\n", 1);
 }
 
 void	ss(t_piece **a, t_piece **b)
 {
 	sa(a);
 	sb(b);
-	printf("ss\n");
+	ft_putstr_fd("ss\n", 1);
 }
-
-// void	pop(t_piece **p)
-// {
-// 	t_piece	*temp;
-
-// 	temp = *p;
-// 	*p = (*p)->next;
-// 	free(temp);
-// }

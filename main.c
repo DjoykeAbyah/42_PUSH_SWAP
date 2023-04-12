@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 16:35:55 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 17:31:08 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ int	main(int argc, char **argv)
 2. utils line:28 first converse to long int before checking
 3. BONUS incl GNL
 4. malloc fail in 
-5. printfuctie niet nodig, gebruik voor de commands gewoon vervangen voor write
-6. niks doen als list null is bij de moves?
-7. static voor de helper functies
-8. remove print_lists!!!
+5. niks doen als list null is bij de moves?
+6. static voor de helper functies
 */
-
-/* pass the address when feeding to a function else it stays local. 
-if i want to change anything i need the address*/

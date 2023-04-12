@@ -6,16 +6,12 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 16:34:55 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 17:24:01 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//const will not change my my list, just iterate through it
-//max wil take over the index which is the smallest.
-// line 46: has to be one because it needs to compare to max first, 
-//so no longer 0 but 1 if true, so you can push top.
 int	find_min(t_piece const *lst_a)
 {	
 	int	i;
@@ -37,7 +33,6 @@ int	find_min(t_piece const *lst_a)
 	return (0);
 }
 
-//keep doing until listlen - 3
 void	little_sort(t_piece **lst_a, t_piece **lst_b)
 {
 	if (list_length(*lst_a) == 3 && !sort_check(*lst_a))
@@ -107,9 +102,7 @@ void	big_sort(t_piece **lst_a, t_piece **lst_b)
 		i++;
 	}
 }
-//value lst_a dus dereference lst!!!!!!!!!
 
-//function that combines sorting, push back and find mallest
 void	sort(t_piece **lst_a, t_piece **lst_b)
 {
 	int	len;
