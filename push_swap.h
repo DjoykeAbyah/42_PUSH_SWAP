@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 18:00:54 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 18:25:35 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int			sort_check(t_piece *list);
 void		indexing(t_piece *list);
 int			check_and_assemble(char **strings, t_piece **a, t_piece *new);
 
-int			terminate(int error);
+void		terminate(void);
 void		ft_free_strings_array(char **strings);
 
 t_piece		*new_node(char *str_input);

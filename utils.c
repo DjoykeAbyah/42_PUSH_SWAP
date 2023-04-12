@@ -6,21 +6,16 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/20 14:50:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 17:54:59 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 18:25:17 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	terminate(int error)
+void	terminate(void)
 {
-	if (error)
-	{
-		ft_putstr_fd("Error\n", 1);
-		exit (EXIT_FAILURE);
-	}
-	else
-		exit (EXIT_SUCCESS);
+	ft_putstr_fd("Error\n", 1);
+	exit (EXIT_FAILURE);
 }
 
 void	ft_free_strings_array(char **strings)

@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/04/12 18:05:31 by dreijans      ########   odam.nl          #
+#    Updated: 2023/04/12 18:39:08 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(LIB):
 	
 $(NAME): $(OBJ_FILES) $(LIB)
 		cp $(LIB) $(NAME)
-		$(CC) -o $(NAME) $(LIB) $(OBJ_FILES) -fsanitize=address -g
+		$(CC) -o $(NAME) $(LIB) $(OBJ_FILES)
 
 %.o: %.c
 		@$(CC) -c $(CFLAGS) -o $@ $^

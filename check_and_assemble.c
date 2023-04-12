@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 17:54:39 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 18:26:46 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	digit_check(char *c)
 	if (c[i] == '-')
 		i++;
 	if (!ft_isalnum(c[i]))
-		terminate(1);
+		terminate();
 	while (c[i] != '\0')
 	{
 		if (!(c[i] >= '0' && c[i] <= '9'))
@@ -28,7 +28,7 @@ int	digit_check(char *c)
 		i++;
 	}
 	if (ft_atoi(c) > 2147483647 || ft_atoi(c) < -2147483648)
-		terminate(1);
+		terminate();
 	return (1);
 }
 
@@ -36,7 +36,7 @@ void	check_duplicates(t_piece *start, t_piece *temp)
 {
 	if (temp->value == start->next->value)
 	{
-		terminate(1);
+		terminate();
 	}
 }
 
@@ -91,7 +91,7 @@ int	check_and_assemble(char **strings, t_piece **a, t_piece *new)
 	while (strings[i] != NULL)
 	{	
 		if (!digit_check(strings[i]))
-			terminate(1);
+			terminate();
 		if (strings[1] == NULL)
 			return (0);
 		new = new_node(strings[i]);

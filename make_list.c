@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/07 20:49:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/11 17:59:30 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 18:28:00 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_piece	*new_node(char *str_input)
 
 	new_node = malloc(sizeof (t_piece));
 	if (new_node == NULL)
-		terminate(1);
+		terminate();
 	new_node->value = ft_atoi(str_input);
 	new_node->index = -1;
 	new_node->next = NULL;
