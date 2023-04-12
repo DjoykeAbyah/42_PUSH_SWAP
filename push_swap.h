@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 18:25:35 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 19:40:10 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int			check_and_assemble(char **strings, t_piece **a, t_piece *new);
 
 void		terminate(void);
 void		ft_free_strings_array(char **strings);
+void		free_node(t_piece **lst_a);
+void		parsing(char **input, t_piece *a, t_piece *b, t_piece *node);
 
 t_piece		*new_node(char *str_input);
 t_piece		*lstlast(t_piece *lst);

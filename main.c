@@ -6,17 +6,12 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 19:00:04 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 19:44:53 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-void	 leaks(void)
-{
-	system("leaks push_swap");
-}
 
 int	main(int argc, char **argv)
 {
@@ -28,7 +23,8 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	new = NULL;
-	atexit(leaks);
+	if (argc < 2)
+		return (0);
 	if (argc == 2)
 	{
 		strings = ft_split(argv[1], ' ');
@@ -36,21 +32,22 @@ int	main(int argc, char **argv)
 			terminate();
 		check_and_assemble(strings, &a, new);
 		sort(&a, &b);
+		// parsing(strings, a, b, new);
 		ft_free_strings_array(strings);
 	}
 	else if (argc > 2)
 	{
+		// parsing(argv + 1, a, b, new);
 		check_and_assemble(argv + 1, &a, new);
 		sort(&a, &b);
 	}
+	free_node(&a);
 	return (0);
 }
-
-/* TO DO */
+/*to do*/
 /*
-1. utils line:28 first converse to long int before checking
-2. malloc fail in 
-3. niks doen als list null is bij de moves?
-4. terminate checken in functies 
-5. leak checker weghalen
+1. fix lines in main.
+2. do something about rra, 
+sometimes check what the best thing is to do. 
+function does 13 or 12
 */
