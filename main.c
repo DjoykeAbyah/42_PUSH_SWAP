@@ -6,12 +6,17 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 18:52:03 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 19:00:04 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+void	 leaks(void)
+{
+	system("leaks push_swap");
+}
 
 int	main(int argc, char **argv)
 {
@@ -23,6 +28,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	new = NULL;
+	atexit(leaks);
 	if (argc == 2)
 	{
 		strings = ft_split(argv[1], ' ');
@@ -46,4 +52,5 @@ int	main(int argc, char **argv)
 2. malloc fail in 
 3. niks doen als list null is bij de moves?
 4. terminate checken in functies 
+5. leak checker weghalen
 */
