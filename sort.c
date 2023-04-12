@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/11 19:17:32 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 16:34:55 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,48 +40,41 @@ int	find_min(t_piece const *lst_a)
 //keep doing until listlen - 3
 void	little_sort(t_piece **lst_a, t_piece **lst_b)
 {
-	if (list_length(*lst_a) == 3)
+	if (list_length(*lst_a) == 3 && !sort_check(*lst_a))
+	{
+		three_sort(lst_a);
 		return ;
+	}
 	if (find_min(*lst_a))
 		pb (lst_a, lst_b);
 	else
 		rra(lst_a);
+	if (sort_check(*lst_a))
+		return ;
 	little_sort(lst_a, lst_b);
 }
 
-void	push_back(t_piece **lst_b, t_piece **lst_a)
-{
-	while (*lst_b != NULL)
-		pa(lst_b, lst_a);
-}
-
-//function that combines sorting, push back and find mallest
-// void	little_sort(t_piece **lst_a, t_piece **lst_b)
-// {
-// 	sorting(lst_a, lst_b);
-// 	push_back(lst_a, lst_b);
-// }
-
-
 void	three_sort(t_piece **lst_a)
 {
-	int	last;
+	int	m;
+	int	l;
 
-	last = lstlast(*lst_a)->index;
+	m = (*lst_a)->next->index;
+	l = lstlast(*lst_a)->index;
 	while (!sort_check(*lst_a))
 	{
-		if ((*lst_a)->index == 1 && last == 2)
+		if (((*lst_a)->index > m) && (m < l) && (l > (*lst_a)->index))
 			sa(lst_a);
-		else if ((*lst_a)->index == 1 && last == 0)
+		else if (((*lst_a)->index < m) && (m > l) && (l < (*lst_a)->index))
 			rra(lst_a);
-		else if ((*lst_a)->index == 2 && last == 1)
+		else if (((*lst_a)->index > m) && (m < l) && (l < (*lst_a)->index))
 			ra(lst_a);
-		else if ((*lst_a)->index == 2 && last == 0)
+		else if (((*lst_a)->index > m) && (m > l) && (l < (*lst_a)->index))
 		{
 			sa(lst_a);
 			rra(lst_a);
 		}
-		else if ((*lst_a)->index == 0)
+		else if (((*lst_a)->index < m) && (m > l) && (l > (*lst_a)->index))
 		{
 			rra(lst_a);
 			sa(lst_a);
@@ -115,3 +108,23 @@ void	big_sort(t_piece **lst_a, t_piece **lst_b)
 	}
 }
 //value lst_a dus dereference lst!!!!!!!!!
+
+//function that combines sorting, push back and find mallest
+void	sort(t_piece **lst_a, t_piece **lst_b)
+{
+	int	len;
+
+	len = list_length(*lst_a);
+	if (len == 2)
+		ra(lst_a);
+	else if (len == 3)
+		three_sort(lst_a);
+	else if (len > 3)
+	{
+		little_sort(lst_a, lst_b);
+		while (list_length(*lst_b) != 0)
+			pa(lst_b, lst_a);
+	}
+	if (len > 10)
+		big_sort(lst_a, lst_b);
+}
