@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/20 14:50:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 19:39:27 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/12 20:12:11 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	free_node(t_piece **lst_a)
 
 void	parsing(char **input, t_piece *a, t_piece *b, t_piece *node)
 {
-	check_and_assemble(input, &a, node);
-	sort(&a, &b);
+	if argc == 2
+	handle strng;
+	if argc > 2
+	handel argv +1;
 }
