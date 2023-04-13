@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/13 14:12:24 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/13 14:28:46 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/13 17:37:25 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	parse_and_sort(char **s, t_piece **a, t_piece **b, t_piece *new)
 	{	
 		if (!digit_check(s[i]))
 			terminate();
-		if (s[1] == NULL)
+		if (s[i] == NULL)
 			return (0);
 		new = new_node(s[i]);
 		lstadd_back(a, new);
