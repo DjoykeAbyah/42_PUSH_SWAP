@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/30 18:30:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 20:12:43 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/13 11:02:47 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,11 @@ int	main(int argc, char **argv)
 		strings = ft_split(argv[1], ' ');
 		if (!strings)
 			terminate();
-		check_and_assemble(strings, &a, new);
-		sort(&a, &b);
+		parse_and_sort(strings, &a, &b, new);
 		ft_free_strings_array(strings);
 	}
 	else if (argc > 2)
-	{
-		check_and_assemble(argv + 1, &a, new);
-		sort(&a, &b);
-	}
+		parse_and_sort(argv + 1, &a, &b, new);
 	free_node(&a);
 	return (0);
 }
-/*to do*/
-/*
-1. fix lines in main. handle the split parsing in function
-2. do something about rra, 
-sometimes check what the best thing is to do. 
-function does 13 or 12
-is it fixed with ra instead of rra?
-*/

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 19:24:17 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 18:58:29 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/13 11:19:18 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ int	digit_check(char *c)
 void	check_duplicates(t_piece *start, t_piece *temp)
 {
 	if (temp->value == start->next->value)
-	{
 		terminate();
-	}
 }
 
 int	sort_check(t_piece *list)
@@ -83,23 +81,24 @@ void	indexing(t_piece *list)
 	}
 }
 
-int	check_and_assemble(char **strings, t_piece **a, t_piece *new)
+int	parse_and_sort(char **s, t_piece **a, t_piece **b, t_piece *new)
 {
 	int	i;
 
 	i = 0;
-	while (strings[i] != NULL)
+	while (s[i] != NULL)
 	{	
-		if (!digit_check(strings[i]))
+		if (!digit_check(s[i]))
 			terminate();
-		if (strings[1] == NULL)
+		if (s[1] == NULL)
 			return (0);
-		new = new_node(strings[i]);
+		new = new_node(s[i]);
 		lstadd_back(a, new);
 		i++;
 	}
 	if (sort_check(*a))
 		return (0);
 	indexing(*a);
+	sort(a, b);
 	return (0);
 }

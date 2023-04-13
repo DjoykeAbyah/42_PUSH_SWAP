@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/14 09:41:41 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/03/22 12:35:03 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/13 13:58:41 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static	int	ft_iswhitespace(char c)
 
 long int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	number;
+	long	i;
+	long	sign;
+	long	number;
 
 	number = 0;
 	sign = 1;
