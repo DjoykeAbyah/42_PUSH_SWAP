@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 19:50:08 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/13 14:27:59 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,12 +112,12 @@ void	sort(t_piece **lst_a, t_piece **lst_b)
 		ra(lst_a);
 	else if (len == 3)
 		three_sort(lst_a);
-	else if (len > 3 || len < 10)
+	else if (len > 3 && len < 10)
 	{
 		little_sort(lst_a, lst_b);
 		while (list_length(*lst_b) != 0)
 			pa(lst_b, lst_a);
 	}
-	if (len >= 10)
+	else if (len > 10)
 		big_sort(lst_a, lst_b);
 }
