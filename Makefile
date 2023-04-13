@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/04/12 18:39:08 by dreijans      ########   odam.nl          #
+#    Updated: 2023/04/13 14:13:04 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = push_swap
 
 CC = cc
 SRC = \
-check_and_assemble.c \
 main.c \
 make_list.c \
+parse.c \
 push.c \
 reverse_rotate.c \
 rotate.c \
