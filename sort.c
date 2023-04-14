@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/13 14:27:59 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/14 20:14:37 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	little_sort(t_piece **lst_a, t_piece **lst_b)
 		pb (lst_a, lst_b);
 	else
 		ra(lst_a);
+	if (rev_sort_check(*lst_a))
+		rra(lst_a);
 	if (sort_check(*lst_a))
 		return ;
 	little_sort(lst_a, lst_b);
@@ -117,7 +119,11 @@ void	sort(t_piece **lst_a, t_piece **lst_b)
 		little_sort(lst_a, lst_b);
 		while (list_length(*lst_b) != 0)
 			pa(lst_b, lst_a);
+		free_node(lst_b);
 	}
-	else if (len > 10)
+	else if (len >= 10)
+	{
 		big_sort(lst_a, lst_b);
+		free_node(lst_b);
+	}
 }
