@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/13 14:12:24 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/14 20:31:48 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/19 17:22:06 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,10 @@ int	parse(char **s, t_piece **a)
 		i++;
 	}
 	if (sort_check(*a))
-		return (0);
+	{
+		free_node(a);
+		exit(0);
+	}
 	indexing(*a);
 	return (0);
 }

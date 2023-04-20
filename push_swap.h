@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 18:00:30 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/14 19:12:36 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/19 19:06:57 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,15 @@ int			list_length(t_piece *list);
 
 void		pa(t_piece **top_s, t_piece **top_d);
 void		pb(t_piece **top_s, t_piece **top_d);
+void		reverse_rotate(t_piece **stack);
 void		rra(t_piece **a);
 void		rrb(t_piece **b);
 void		rrr(t_piece **a, t_piece **b);
+void		rotate(t_piece **stack);
 void		ra(t_piece **a);
 void		rb(t_piece **b);
 void		rr(t_piece **a, t_piece **b);
+void		swap(t_piece **stack);
 void		sa(t_piece **a);
 void		sb(t_piece **b);
 void		ss(t_piece **a, t_piece **b);

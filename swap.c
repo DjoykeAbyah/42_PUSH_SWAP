@@ -6,55 +6,46 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/24 17:17:10 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/12 16:53:43 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/19 17:49:55 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_piece **a)
+void	swap(t_piece **stack)
 {
 	t_piece	*one;
 	t_piece	*two;
 	t_piece	*three;
 
-	if (*a == NULL)
+	if (*stack == NULL)
 		exit(EXIT_FAILURE);
-	one = *a;
-	two = (*a)->next;
-	three = (*a)->next->next;
+	one = *stack;
+	two = (*stack)->next;
+	three = (*stack)->next->next;
 	one->next = three;
 	one->previous = two;
 	two->next = one;
 	two->previous = NULL;
 	three->previous = one;
-	*a = two;
+	*stack = two;
+}
+
+void	sa(t_piece **a)
+{
+	swap(a);
 	ft_putstr_fd("sa\n", 1);
 }
 
 void	sb(t_piece **b)
 {
-	t_piece	*one;
-	t_piece	*two;
-	t_piece	*three;
-
-	if (*b == NULL)
-		exit(EXIT_FAILURE);
-	one = *b;
-	two = (*b)->next;
-	three = (*b)->next->next;
-	one->next = three;
-	one->previous = two;
-	two->next = one;
-	two->previous = NULL;
-	three->previous = one;
-	*b = two;
+	swap(b);
 	ft_putstr_fd("sb\n", 1);
 }
 
 void	ss(t_piece **a, t_piece **b)
 {
-	sa(a);
-	sb(b);
+	swap(a);
+	swap(b);
 	ft_putstr_fd("ss\n", 1);
 }

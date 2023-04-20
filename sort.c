@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 18:31:36 by dreijans      #+#    #+#                 */
-/*   Updated: 2023/04/14 20:14:37 by dreijans      ########   odam.nl         */
+/*   Updated: 2023/04/19 17:21:00 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	sort(t_piece **lst_a, t_piece **lst_b)
 	int	len;
 
 	len = list_length(*lst_a);
-	if (len == 2 && !sort_check(*lst_a))
+	if (len == 2)
 		ra(lst_a);
 	else if (len == 3)
 		three_sort(lst_a);
