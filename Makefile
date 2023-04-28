@@ -6,49 +6,52 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/01 19:24:21 by dreijans      #+#    #+#                  #
-#    Updated: 2023/04/14 20:38:44 by dreijans      ########   odam.nl          #
+#    Updated: 2023/04/28 13:13:05 by djoyke        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-
-CC = cc
-SRC = \
+NAME	= push_swap
+LIBFT	= ./libft/libft.a
+CC	= gcc
+CFLAGS	= -Wall -Werror -Wextra -g
+SRC	= sort.c \
 main.c \
 make_list.c \
-parse.c \
 push.c \
+parse.c \
 reverse_rotate.c \
 rotate.c \
-sort.c \
 swap.c \
-utils.c 
-OBJ_FILES = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror
-LIB = $(LIBDIR)/libft.a
-LIBDIR = Libft
+utils.c \
 
-.PHONY: all clear fclean re
+OBJ	= $(addprefix $(OBJDIR)/, $(notdir $(SRC:.c=.o)))
 
-all: $(NAME)
+OBJDIR	= obj
 
-$(LIB):
-	$(MAKE) -C $(LIBDIR) all --quiet
-	
-$(NAME): $(OBJ_FILES) $(LIB)
-		cp $(LIB) $(NAME)
-		$(CC) -o $(NAME) $(LIB) $(OBJ_FILES) $(CFLAGS)
+all:	$(NAME)
 
-%.o: %.c
-		@$(CC) -c $(CFLAGS) -o $@ $^
+$(NAME): $(LIBFT) $(OBJ)
+		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+
+$(LIBFT): 
+		@$(MAKE) -C ./libft
+
+$(OBJDIR)/%.o: %.c
+		@mkdir -p $(OBJDIR)
+		$(CC) $(CFLAGS) -c -o $@ $^
+
+$(OBJDIR)/%.o:
+		@mkdir -p $(OBJDIR)
+		$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
-		$(RM) $(OBJ_FILES)
-		$(MAKE) -C $(LIBDIR) clean 
+		@$(MAKE) clean -C ./libft
+		@rm -rf $(OBJDIR)
 
-fclean: 
-		$(RM) $(OBJ_FILES)
-		$(RM) $(NAME)
-		$(MAKE) -C $(LIBDIR) fclean
+fclean: clean
+		@$(MAKE) fclean -C ./libft
+		@rm -f $(NAME)
 
-re: fclean all
+re:		fclean all
+
+.PHONY: all clean fclean re
