@@ -6,13 +6,13 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/04 16:56:00 by dreijans      #+#    #+#                  #
-#    Updated: 2023/04/28 13:19:35 by djoyke        ########   odam.nl          #
+#    Updated: 2023/04/28 13:21:52 by djoyke        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -9
+CFLAGS = -Wall -Wextra -Werror 
 SRC = \
 ft_isalnum.c \
 ft_isalpha.c \
