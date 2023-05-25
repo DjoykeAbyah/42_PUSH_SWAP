@@ -1,6 +1,7 @@
 # Push_swap 💡
 
 Push_swap is a sorting algorithm that operates on two stacks named `a` and `b`. 
+![gif push_swap](https://github.com/DjoykeAbyah/PUSH_SWAP/assets/115019123/e6972923-3477-4691-9db9-e6307b7f2c54)
 
 ### Rules ✅
 
