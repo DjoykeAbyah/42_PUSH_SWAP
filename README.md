@@ -16,10 +16,10 @@ Errors include, for example, arguments that aren't integers, arguments that are 
 You have 2 stacks named a and b. 📚
 
 At the beginning:
-- The stack a contains a random amount of negative and/or positive numbers which cannot be duplicated. 🎲
-- The stack b is empty. 🈳
+- The stack a contains a random amount of negative and/or positive numbers which cannot be duplicated. 
+- The stack b is empty. 
 
-The goal is to sort numbers in ascending order into stack a. ⬆️
+The goal is to sort numbers in ascending order into stack a. ⬆
 
 Operations at your disposal:
 
