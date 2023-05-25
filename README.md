@@ -52,3 +52,18 @@ pa
 Implementation Details 💡
 I used bitwise operators to implement Radix Sort to sort bigger sequences of numbers and came up with other solutions for sequences of 10 and below.
 
+## Installation
+1. Clone the repository or download the source code files.
+2. Compile the program using the provided Makefile by simply running:
+
+```$ make```
+
+
+## Usage
+Run the following command to execute:
+
+```./push_swap [random numbers]```
+
+got to e.g. https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php to generate some random numbers to try it out!
+
+
